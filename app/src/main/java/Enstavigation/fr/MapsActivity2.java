@@ -47,7 +47,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, RoutingListener, GoogleApiClient.OnConnectionFailedListener, GoogleMap.OnPolylineClickListener {
+public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback, RoutingListener, GoogleApiClient.OnConnectionFailedListener, GoogleMap.OnPolylineClickListener {
 
     private GoogleMap mMap;
     SupportMapFragment mapFragment;
@@ -63,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     AbstractRouting.TravelMode[] travel_mode={AbstractRouting.TravelMode.DRIVING,AbstractRouting.TravelMode.TRANSIT,AbstractRouting.TravelMode.BIKING};
     List<Integer> colors = Arrays.asList(R.color.black, R.color.teal_200, R.color.purple_200);
-    int current_travel_mode=0;
+    int current_travel_mode=2;
 
     private final int ACCESS_LOCATION_REQUEST_CODE=1001;
     @Override
@@ -87,7 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 String location=searchView.getQuery().toString();
                 List<Address> addressList=null;
                 if(location!=null||!location.equals("")){
-                    Geocoder geocoder=new Geocoder(MapsActivity.this);
+                    Geocoder geocoder=new Geocoder(MapsActivity2.this);
                     try{
                         addressList=geocoder.getFromLocationName(location,1);
 
@@ -206,7 +206,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void Findroutes(LatLng Start, LatLng End,AbstractRouting.TravelMode TRAVEL_MODE)
     {
         if(Start==null || End==null) {
-            Toast.makeText(MapsActivity.this,"Unable to get location",Toast.LENGTH_LONG).show();
+            Toast.makeText(MapsActivity2.this,"Unable to get location",Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -234,7 +234,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onRoutingStart() {
-        Toast.makeText(MapsActivity.this,"Finding Route...",Toast.LENGTH_LONG).show();
+        Toast.makeText(MapsActivity2.this,"Finding Route...",Toast.LENGTH_LONG).show();
     }
 
     //If Route finding success..

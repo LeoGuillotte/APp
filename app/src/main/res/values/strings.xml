@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Enstavigation</string>
     <string name="title_activity_maps">Map</string>
-    <string name="welcome_msg">welcome_msg</string>
+    <string name="welcome_msg">Bienvenue sur Enstavigation !!!</string>
     <string name="todo">todo</string>
-    <string name="recherche">recherche</string>
+    <string name="recherche">On y va en voiture!</string>
+    <string name="velo">VELO</string>
+    <string name="voiture">Voiture</string>
+    <string name="marche">MARCHE</string>
+    <string name="retour">Retour</string>
+
+
 </resources>
